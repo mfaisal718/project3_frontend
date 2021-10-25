@@ -17,7 +17,7 @@ function Index(props) {
     // handle submit function for form
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.createPlayer(newForm);
+        props.createdPlayer(newForm);
         setNewForm({
             name: "",
             position: "",
@@ -30,8 +30,9 @@ function Index(props) {
         return props.player.map((player) => (
             <div key={player._id} className="player">
                 <Link to={`/player/${player._id}`}><h1>{player.name}</h1></Link>
+                <h2>{player.position}</h2>
                 <img src={player.image} alt={player.name} />
-                <h3>{player.position}</h3>
+
             </div>
         ));
     };
