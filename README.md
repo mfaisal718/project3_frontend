@@ -5,7 +5,7 @@ A simple app that allows you to add your fantasy football players and check the 
 
 Technologie's used: React, Javascript, MongoDB, Mongoose, Express, Dotenv, Bulma
 
-Screenshots: ![](public/Wireframes.png)
+Screenshots: ![](public/wireframes.png)
 
 Getting Started:
 
