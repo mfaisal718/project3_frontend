@@ -1,5 +1,6 @@
 // We Must Import the React Library
 import React from "react";
+import { Card } from "react-bulma-components";
 
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
 const NewsDisplay = ({ News }) => {
@@ -8,9 +9,11 @@ const NewsDisplay = ({ News }) => {
 
         return (
             <>
-                <h1>{News[0].Title}</h1>
-                <p>{News[0].Content}</p>
-                <p>{News[0].Categories}</p>
+                <Card style={{ width: 300, margin: 'auto' }}>
+                    <Card.Header> {News[0].Title} </Card.Header>
+                    <Card.Content> {News[0].Content} </Card.Content>
+                    <Card.Footer> {News[0].Categories} </Card.Footer>
+                </Card>
             </>
         );
     }

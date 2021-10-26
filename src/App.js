@@ -1,4 +1,6 @@
 import React from "react";
+import 'bulma/css/bulma.min.css';
+//
 import "./App.css";
 // WE IMPORT OUR COMPONENTS
 import Form from "./components/Form";

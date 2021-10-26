@@ -1,4 +1,7 @@
 import React from "react";
+import 'bulma/css/bulma.min.css';
+import { Button } from 'react-bulma-components';
+
 
 // Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
 const Form = (props) => {
@@ -31,7 +34,8 @@ const Form = (props) => {
                     onChange={handleChange}
                     value={formData.searchTerm}
                 />
-                <input type="submit" value="submit" />
+                <br />
+                <Button color="success" type="submit" value="submit" size="small">SUBMIT</Button>
             </form>
         </div>
     );

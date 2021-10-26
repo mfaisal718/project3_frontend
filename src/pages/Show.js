@@ -1,4 +1,7 @@
 import { useState } from "react";
+import 'bulma/css/bulma.min.css';
+import { Button } from 'react-bulma-components';
+
 function Show(props) {
     const id = props.match.params.id;
     const player = props.player;
@@ -17,19 +20,19 @@ function Show(props) {
         props.history.push("/");
     }
 
-    const removePlayer = () => {
-        props.deletePlayer(player._id);
+    const removePlayer = event => {
+        props.deletePlayer(playa._id);
         props.history.push("/");
     }
 
     return (
-        <div className="playa">
+        <div className="player">
             <h1>{player.name}</h1>
             <h2>{player.title}</h2>
             <img src={player.image} alt={player.name} />
-            <button id="delete" onClick={removePlayer}>
+            <Button id="delete" color="danger" size="small" onClick={removePlayer}>
                 DELETE
-            </button>
+            </Button>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -52,7 +55,7 @@ function Show(props) {
                     placeholder="position"
                     onChange={handleChange}
                 />
-                <input type="submit" value="UPDATE" />
+                <Button type="submit" value="UPDATE" color="primary" size="small">UPDATE</Button>
             </form>
         </div>
     )

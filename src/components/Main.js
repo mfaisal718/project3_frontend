@@ -6,7 +6,7 @@ import Show from "../pages/Show";
 function Main(props) {
     const [player, setPlayer] = useState(null)
 
-    const URL = "https://mohammed-project3.herokuapp.com/player";
+    const URL = "https://mohammed-project3.herokuapp.com/player/";
 
     const getPlayer = async () => {
         const response = await fetch(URL);

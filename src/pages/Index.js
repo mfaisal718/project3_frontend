@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Card } from "react-bulma-components";
+import { Button } from 'react-bulma-components';
 
 function Index(props) {
     // state to hold formData
@@ -28,12 +30,14 @@ function Index(props) {
     // loaded function
     const loaded = () => {
         return props.player.map((player) => (
-            <div key={player._id} className="player">
-                <Link to={`/player/${player._id}`}><h1>{player.name}</h1></Link>
-                <h2>{player.position}</h2>
-                <img src={player.image} alt={player.name} />
+            <Card style={{ width: 300, margin: 'auto' }}>
+                <Card.Header.Title />
+                <div key={player._id} className="player">
+                    <Link to={`/player/${player._id}`}><h1>{player.name}</h1></Link>
+                    <h2>{player.position}</h2></div>
+                <Card.Image src={player.image} alt={player.name} />
 
-            </div>
+            </Card>
         ));
     };
 
@@ -65,7 +69,7 @@ function Index(props) {
                     placeholder="position"
                     onChange={handleChange}
                 />
-                <input type="submit" value="Create Player" />
+                <Button color="primary" type="submit" value="create player" size="small" >CREATE PLAYER</Button>
             </form>
             {props.player ? loaded() : loading()}
         </section>
